@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Automovil deportivo = new Automovil.AutomovilBuilder()
+        Automovil deportivo = new AutomovilBuilder()
                 .setMotor("V8")
                 .setColor("Rojo")
                 .setLlantas("Deportivas")
@@ -10,12 +10,12 @@ public class Main {
                 .setGps(true)
                 .build();
 
-        Automovil electrico = new Automovil.AutomovilBuilder()
+        Automovil electrico = new AutomovilBuilder()
                 .setMotor("Eléctrico")
                 .setColor("Azul")
                 .build();
 
-        Automovil economico = new Automovil.AutomovilBuilder()
+        Automovil economico = new AutomovilBuilder()
                 .setMotor("1.6")
                 .setColor("Blanco")
                 .setInteriores("Tela")
