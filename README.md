@@ -13,3 +13,34 @@ Dificultad de mantenimiento: cada cambio en la clase obliga a modificar todos lo
 Legibilidad reducida: el orden de los parámetros en constructores largos es propenso a errores.
 
 Baja flexibilidad: si un atributo es opcional, se necesitan constructores adicionales o parámetros por defecto.
+
+### Paso 2 — Decidir el rol del Builder
+Decisión de diseño: aplicar el patrón Builder para separar la construcción del objeto de su representación final.
+### Justificación:
+La clase Automovil se mantiene inmutable (no cambia después de creada).
+
+El AutomovilBuilder concentra toda la lógica de construcción y es más flexible al permitir parámetros opcionales sin necesidad de subclases ni múltiples constructores.
+
+El código cliente es más legible: se lee como una secuencia de configuraciones.
+
+### Paso 3 — Definir el contrato (Automovil y AutomovilBuilder)
+Automovil (clase inmutable):
+
+Contiene solo atributos finales (motor, color, llantas, etc.).
+
+Constructor privado: solo puede ser creado por el builder.
+
+AutomovilBuilder:
+
+Métodos setMotor(...), setColor(...), setLlantas(...), etc.
+
+Método build() que devuelve un Automovil.
+
+### Paso 4 — Construcción paso a paso con Builder
+En lugar de:
+''' Automovil auto = new Automovil("V8", "Rojo", "Deportivas", "Bose", "Cuero", true, true); '''
+
+
+
+
+
