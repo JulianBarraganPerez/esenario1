@@ -180,11 +180,28 @@ classDiagram
     AutomovilBuilder --> Automovil
     Main --> Automovil
 
+## ejecucion y resultados
 
+### Compilación y ejecución en terminal
 
+```java
+javac Automovil.java Main.java
+```
 
+```java
+java Main
+```
 
+### Resultados esperados en consola
+<img width="869" height="143" alt="image" src="https://github.com/user-attachments/assets/9096167b-b318-42b4-bf16-147538c972e0" />
 
+Flexibilidad: no es necesario pasar todos los parámetros.
+
+Legibilidad: cada atributo se establece con un método claro.
+
+Inmutabilidad: una vez creado el objeto, no se puede modificar.
+
+Separación: la lógica de construcción queda en el Builder.
 
 
 
