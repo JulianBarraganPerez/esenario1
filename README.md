@@ -141,7 +141,71 @@ Evidencia de flexibilidad: ambos objetos son válidos aunque definan configuraci
 
 ## Diagrama UML
 
+```plantuml
+@startuml
+class Automovil {
 
+motor: String
+
+color: String
+
+llantas: String
+
+sonido: String
+
+interiores: String
+
+techoSolar: boolean
+
+gps: boolean
+
+getters()
+
+toString()
+}
+
+class AutomovilBuilder {
+
+motor: String
+
+color: String
+
+llantas: String
+
+sonido: String
+
+interiores: String
+
+techoSolar: boolean
+
+gps: boolean
+
+setMotor(String): AutomovilBuilder
+
+setColor(String): AutomovilBuilder
+
+setLlantas(String): AutomovilBuilder
+
+setSonido(String): AutomovilBuilder
+
+setInteriores(String): AutomovilBuilder
+
+setTechoSolar(boolean): AutomovilBuilder
+
+setGps(boolean): AutomovilBuilder
+
+build(): Automovil
+}
+
+class Main {
+
+main()
+}
+
+AutomovilBuilder --> Automovil
+Main --> Automovil
+@enduml
+```
 
 
 
