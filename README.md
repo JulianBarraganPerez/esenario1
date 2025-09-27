@@ -43,6 +43,107 @@ En lugar de:
 Automovil auto = new Automovil("V8", "Rojo", "Deportivas", "Bose", "Cuero", true, true); 
 ```
 
+Ahora:
+
+```java
+Automovil auto = new Automovil.AutomovilBuilder()
+        .setMotor("V8")
+        .setColor("Rojo")
+        .setLlantas("Deportivas")
+        .setSonido("Bose")
+        .setInteriores("Cuero")
+        .setTechoSolar(true)
+        .setGps(true)
+        .build();
+```
+
+Resultado: el código cliente es más legible, claro y flexible.
+
+### Paso 5 — Implementación del Builder
+
+Encapsula la construcción: todos los parámetros opcionales se definen en el Builder.
+
+Inmutabilidad: el objeto final Automovil no expone setters.
+
+Reutilización: distintos autos se crean fácilmente cambiando solo algunos atributos.
+
+Cómo demuestra los beneficios: el builder elimina constructores telescópicos, mantiene la clase Automovil simple y permite omitir parámetros sin romper la lógica.
+
+### Paso 6 — Ejemplo de uso (Main.java)
+
+```java
+Automovil auto1 = new Automovil.AutomovilBuilder()
+        .setMotor("V8")
+        .setColor("Rojo")
+        .setTechoSolar(true)
+        .setGps(true)
+        .build();
+
+Automovil auto2 = new Automovil.AutomovilBuilder()
+        .setMotor("Eléctrico")
+        .setColor("Azul")
+        .build();
+```
+
+### Evidencia:
+
+auto1 tiene configuraciones completas.
+
+auto2 solo define motor y color, pero sigue siendo un objeto válido.
+
+### Paso 7 — Cómo cada beneficio queda reflejado
+
+### Legibilidad y claridad
+
+Evidencia: la secuencia de métodos del builder se lee como una lista de configuraciones.
+
+No hay confusión con el orden de parámetros como en los constructores telescópicos.
+
+### Inmutabilidad
+
+Evidencia: Automovil no expone setters, sus atributos son final y solo se asignan una vez vía AutomovilBuilder.
+
+### Flexibilidad
+
+Evidencia: se pueden omitir atributos opcionales (auto2) sin necesidad de subclases ni múltiples constructores.
+
+### Separación de construcción y representación
+
+Evidencia: Automovil solo define los atributos del auto; AutomovilBuilder se encarga de la construcción.
+
+Cambiar la forma de construir un auto no afecta la clase Automovil.
+
+### Paso 8 — Pruebas rápidas de validación
+
+Crear un automóvil deportivo:
+
+```java
+Automovil deportivo = new Automovil.AutomovilBuilder()
+        .setMotor("V8 Biturbo")
+        .setColor("Negro")
+        .setLlantas("Deportivas 20''")
+        .build(); 
+```
+
+Crear un automóvil económico:
+
+```java
+Automovil economico = new Automovil.AutomovilBuilder()
+        .setMotor("1.6")
+        .setColor("Blanco")
+        .build();
+ 
+```
+
+Evidencia de flexibilidad: ambos objetos son válidos aunque definan configuraciones distintas.
+
+
+
+
+
+
+
+
 
 
 
