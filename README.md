@@ -141,71 +141,45 @@ Evidencia de flexibilidad: ambos objetos son válidos aunque definan configuraci
 
 ## Diagrama UML
 
-```plantuml
-@startuml
-class Automovil {
+```mermaid
+classDiagram
+    class Automovil {
+        - String motor
+        - String color
+        - String llantas
+        - String sonido
+        - String interiores
+        - boolean techoSolar
+        - boolean gps
+        + getters()
+        + toString()
+    }
 
-motor: String
+    class AutomovilBuilder {
+        - String motor
+        - String color
+        - String llantas
+        - String sonido
+        - String interiores
+        - boolean techoSolar
+        - boolean gps
+        + setMotor(String): AutomovilBuilder
+        + setColor(String): AutomovilBuilder
+        + setLlantas(String): AutomovilBuilder
+        + setSonido(String): AutomovilBuilder
+        + setInteriores(String): AutomovilBuilder
+        + setTechoSolar(boolean): AutomovilBuilder
+        + setGps(boolean): AutomovilBuilder
+        + build(): Automovil
+    }
 
-color: String
+    class Main {
+        + main()
+    }
 
-llantas: String
+    AutomovilBuilder --> Automovil
+    Main --> Automovil
 
-sonido: String
-
-interiores: String
-
-techoSolar: boolean
-
-gps: boolean
-
-getters()
-
-toString()
-}
-
-class AutomovilBuilder {
-
-motor: String
-
-color: String
-
-llantas: String
-
-sonido: String
-
-interiores: String
-
-techoSolar: boolean
-
-gps: boolean
-
-setMotor(String): AutomovilBuilder
-
-setColor(String): AutomovilBuilder
-
-setLlantas(String): AutomovilBuilder
-
-setSonido(String): AutomovilBuilder
-
-setInteriores(String): AutomovilBuilder
-
-setTechoSolar(boolean): AutomovilBuilder
-
-setGps(boolean): AutomovilBuilder
-
-build(): Automovil
-}
-
-class Main {
-
-main()
-}
-
-AutomovilBuilder --> Automovil
-Main --> Automovil
-@enduml
-```
 
 
 
