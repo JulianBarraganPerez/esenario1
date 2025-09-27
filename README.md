@@ -15,7 +15,7 @@ Legibilidad reducida: el orden de los parámetros en constructores largos es pro
 Baja flexibilidad: si un atributo es opcional, se necesitan constructores adicionales o parámetros por defecto.
 
 ### Paso 2 — Decidir el rol del Builder
-Decisión de diseño: aplicar el patrón Builder para separar la construcción del objeto de su representación final.
+Decisión de diseño: aplicar el patrón Creacional para separar la construcción del objeto de su representación final.
 ### Justificación:
 La clase Automovil se mantiene inmutable (no cambia después de creada).
 
@@ -26,9 +26,11 @@ El código cliente es más legible: se lee como una secuencia de configuraciones
 ### Paso 3 — Definir el contrato (Automovil y AutomovilBuilder)
 Automovil (clase inmutable):
 
-Contiene solo atributos finales (motor, color, llantas, etc.).
+Contiene solo atributos finales (motor, color, llantas, etc.....).
 
-Constructor privado: solo puede ser creado por el builder.
+Constructor privado: 
+
+solo puede ser creado por el builder.
 
 AutomovilBuilder:
 
@@ -37,13 +39,13 @@ Métodos setMotor(...), setColor(...), setLlantas(...), etc.
 Método build() que devuelve un Automovil.
 
 ### Paso 4 — Construcción paso a paso con Builder
-En lugar de:
+En lugar de poner:
 
 ```java
 Automovil auto = new Automovil("V8", "Rojo", "Deportivas", "Bose", "Cuero", true, true); 
 ```
 
-Ahora:
+Usamos:
 
 ```java
 Automovil auto = new Automovil.AutomovilBuilder()
@@ -61,7 +63,7 @@ Resultado: el código cliente es más legible, claro y flexible.
 
 ### Paso 5 — Implementación del Builder
 
-Encapsula la construcción: todos los parámetros opcionales se definen en el Builder.
+Se encapsula la construcción: todos los parámetros opcionales se definen en el Builder.
 
 Inmutabilidad: el objeto final Automovil no expone setters.
 
@@ -137,6 +139,7 @@ Automovil economico = new Automovil.AutomovilBuilder()
 
 Evidencia de flexibilidad: ambos objetos son válidos aunque definan configuraciones distintas.
 
+## Diagrama UML
 
 
 
