@@ -179,7 +179,7 @@ classDiagram
 
     AutomovilBuilder --> Automovil
     Main --> Automovil
-
+```
 ## ejecucion y resultados
 
 ### Compilación y ejecución en terminal
