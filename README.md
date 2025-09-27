@@ -1,4 +1,4 @@
-# esenario 1
+# Esenario 1
 ## Identificación del patrón
 ### Tipo de patrón: Creacional
 ### Patrón aplicado: Builder
@@ -192,7 +192,7 @@ javac Automovil.java Main.java
 java Main
 ```
 
-### Resultados esperados en consola
+### Resultados en consola
 <img width="869" height="143" alt="image" src="https://github.com/user-attachments/assets/9096167b-b318-42b4-bf16-147538c972e0" />
 
 Flexibilidad: no es necesario pasar todos los parámetros.
